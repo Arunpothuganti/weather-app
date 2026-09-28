@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <form id="search">
+      <input id="city" placeholder="Search a city" aria-label="City" required>
+      <button>Search</button>
+    </form>
+
+    <p id="status" role="status">Type a city to see its weather.</p>
+
+    <section id="result" hidden>
+      <div class="now">
+        <p class="temp" id="temp"></p>
+        <p class="desc" id="desc"></p>
+        <p class="place" id="place"></p>
+      </div>
+      <ul class="days" id="days"></ul>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

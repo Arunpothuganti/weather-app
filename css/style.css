@@ -1,0 +1,52 @@
+/* Colors live in variables, so JS can change the mood by swapping one class on <body> */
+:root { --bg: #dbe7f3; --ink: #12263a; --card: rgba(255,255,255,.55); }
+body.sunny  { --bg: #ffd98a; --ink: #3a2500; }
+body.cloudy { --bg: #c9d1d9; --ink: #1f2933; }
+body.rainy  { --bg: #7f9bb5; --ink: #0b1d2d; }
+body.snowy  { --bg: #eaf3fb; --ink: #17324d; }
+body.stormy { --bg: #4b5567; --ink: #f1f5f9; --card: rgba(255,255,255,.15); }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  transition: background .6s, color .6s;
+}
+
+main { max-width: 420px; margin: 0 auto; }
+
+form { display: flex; gap: 8px; }
+
+input, button {
+  font: inherit;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+input { flex: 1; background: var(--card); color: inherit; }
+button { background: var(--ink); color: var(--bg); cursor: pointer; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+
+#status { margin: 24px 0; min-height: 1.4em; }
+
+.now { text-align: center; margin: 32px 0; }
+.temp { font-size: 96px; line-height: 1; margin: 0; font-weight: 400; }
+.desc { font-size: 22px; margin: 8px 0 0; }
+.place { opacity: .75; margin: 4px 0 0; }
+
+.days { display: grid; gap: 8px; padding: 0; list-style: none; }
+.days li {
+  display: flex;
+  justify-content: space-between;
+  background: var(--card);
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+[hidden] { display: none; }
